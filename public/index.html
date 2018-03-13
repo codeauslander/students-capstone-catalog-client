@@ -14,7 +14,15 @@
 <body>
   <div id="vue-app">
 
+    <nav class="navbar navbar-dark bg-dark">
+       <a class="btn btn-info" href="/#/">Good Students :3. Wrong!!!</a>
+
+    </nav>
+
+
     <router-view></router-view>
+
+    <footer class="navbar navbar-dark bg-dark justify-content-center"><a class="btn btn-info " href="/#/">All rigths reserved</a></footer>
 
   </div>
 
@@ -26,32 +34,33 @@
 
 <template id="students-index-page">
   <div class="vue-component">
-
-    <div class="students" v-for="student in students">
-      <div class="card" style="width: 18rem;">
+    <div class="container index-students">
+        <div class="students row" >
+          <div class="card float-left" style="width: 18rem;" v-for="student in students">
+            <div class="card-body">
+              <img class="card-img" v-bind:src="student.photo" alt="student photo">
+              <h5 class="card-title">{{student.first_name}} {{student.last_name}}</h5>
+              <p>{{student.email}}</p>
+              <p>{{student.github}}</p>
+              <p>{{student.id}}</p>
+              <!-- <p></p> -->
+              <p>{{student.linkedin_url}}</p>
+              <p>{{student.online_resume}}</p>
+              <p>{{student.phone_number}}</p>
         
-        <div class="card-body">
-          <h5 class="card-title">{{student.first_name}}</h5>
-          
-          <p>{{student.email}}</p>
-          <p>{{student.github}}</p>
-          <p>{{student.id}}</p>
-          <p>{{student.last_name}}</p>
-          <p>{{student.linkedin_url}}</p>
-          <p>{{student.online_resume}}</p>
-          <p>{{student.phone_number}}</p>
-          <p>{{student.photo}}</p>
-          <p>{{student.short_bio}}</p>
-          <p>{{student.twitter_handle}}</p>
-          <p>{{student.website_url}}</p>
-          <ul v-for="capstone in student.capstones">
-            <li>{{capstone.name}}</li>
-            <img v-bind:src="capstone.screenshot" alt="capstone img">
-          </ul>
-          
-          <a href="#" class="btn btn-primary">Show me</a>
+              <p>{{student.short_bio}}</p>
+              <p>{{student.twitter_handle}}</p>
+              <p>{{student.website_url}}</p>
+              
+              <ul v-for="capstone in student.capstones">
+
+                <li>{{capstone.name}}</li>
+                <img class="card-img" v-bind:src="capstone.screenshot" alt="capstone img">
+              </ul>
+              <a href="#" class="btn btn-primary">Show me</a>
+            </div>
+          </div>
         </div>
-      </div>
     </div>
 
   </div>

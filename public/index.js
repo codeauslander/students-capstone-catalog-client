@@ -18,8 +18,10 @@ var StudentIndexPage = {
     index: function() {
       axios.get("/students").then(
         function(response) {
+          console.log(response.data)
           this.students = response.data;
           console.log(this.students);
+          console.log(this.students.capstones);
         }.bind(this)
       );
     }

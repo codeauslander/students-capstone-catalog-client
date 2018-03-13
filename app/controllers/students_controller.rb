@@ -9,12 +9,21 @@ class StudentsController < ApplicationController
       }
     ]
 
-    
+    capstone = [
+      {
+        id:1, student_id: 2, name: "Drone Game", url: "drone game url", screenshot: "image"
+      },
+      {
+        id:1, student_id: 1, name: "Social Service Connector", url: "capstone url", screenshot: "image2"
+      },
+    ]
+ 
 
     @students = ss 
     # @students = Student.all
     puts @students
     # render 'index.json.jbuilder'
+
     render json: @students.as_json
   end
   def show
@@ -23,7 +32,7 @@ class StudentsController < ApplicationController
     }
     @student = s
     # @student = Student.find(params[:id])
-    # render 'show.json.jbuilder'
+
     render json: @student.as_json
   end
 end

@@ -22,9 +22,9 @@ class StudentsController < ApplicationController
     @students = ss 
     # @students = Student.all
     puts @students
-    # render 'index.json.jbuilder'
+    render 'index.json.jbuilder'
 
-    render json: @students.as_json
+    # render json: @students.as_json
   end
   def show
     s = {

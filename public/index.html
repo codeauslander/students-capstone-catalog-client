@@ -29,23 +29,25 @@
 
     <div class="students" v-for="student in students">
       <div class="card" style="width: 18rem;">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+        
         <div class="card-body">
           <h5 class="card-title">{{student.first_name}}</h5>
-          <p></p>
-          <!-- <p></p>email -->
-          <!-- first_name
-          github
-          id
-          last_name
-          linkedin_url
-          online_resume
-          phone_number
-          photo
-          short_bio
-          twitter_handle
-          website_url
-          capstones -->
+          
+          <p>{{student.email}}</p>
+          <p>{{student.github}}</p>
+          <p>{{student.id}}</p>
+          <p>{{student.last_name}}</p>
+          <p>{{student.linkedin_url}}</p>
+          <p>{{student.online_resume}}</p>
+          <p>{{student.phone_number}}</p>
+          <p>{{student.photo}}</p>
+          <p>{{student.short_bio}}</p>
+          <p>{{student.twitter_handle}}</p>
+          <p>{{student.website_url}}</p>
+          <ul v-for="capstone in student.capstones">
+            <li>{{capstone.name}}</li>
+            <img v-bind:src="capstone.screenshot" alt="capstone img">
+          </ul>
           
           <a href="#" class="btn btn-primary">Show me</a>
         </div>

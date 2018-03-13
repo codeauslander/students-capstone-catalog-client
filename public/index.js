@@ -6,18 +6,6 @@ var StudentIndexPage = {
     return {
       students: [
         {
-          // email: "",
-          // first_name: "",
-          // github: "",
-          // id: "",
-          // last_name: "",
-          // linkedin_url: "",
-          // online_resume: "",
-          // phone_number: "",
-          // photo: "",
-          // short_bio: "",
-          // twitter_handle: "",
-          // website_url: "",
           capstones: []
         }
       ]

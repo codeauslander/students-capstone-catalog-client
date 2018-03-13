@@ -24,10 +24,33 @@
 </body>
 </html>
 
-<template id="home-page">
+<template id="students-index-page">
   <div class="vue-component">
 
-    <h1>{{ message }}</h1>
+    <div class="students" v-for="student in students">
+      <div class="card" style="width: 18rem;">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+        <div class="card-body">
+          <h5 class="card-title">{{student.first_name}}</h5>
+          <p></p>
+          <!-- <p></p>email -->
+          <!-- first_name
+          github
+          id
+          last_name
+          linkedin_url
+          online_resume
+          phone_number
+          photo
+          short_bio
+          twitter_handle
+          website_url
+          capstones -->
+          
+          <a href="#" class="btn btn-primary">Show me</a>
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>

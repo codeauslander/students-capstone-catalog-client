@@ -1,19 +1,46 @@
 /* global Vue, VueRouter, axios */
 
-var HomePage = {
-  template: "#home-page",
+var StudentIndexPage = {
+  template: "#students-index-page",
   data: function() {
     return {
-      message: "Welcome to Vue.js!"
+      students: [
+        {
+          // email: "",
+          // first_name: "",
+          // github: "",
+          // id: "",
+          // last_name: "",
+          // linkedin_url: "",
+          // online_resume: "",
+          // phone_number: "",
+          // photo: "",
+          // short_bio: "",
+          // twitter_handle: "",
+          // website_url: "",
+          capstones: []
+        }
+      ]
     };
   },
-  created: function() {},
-  methods: {},
+  created: function() {
+    this.index();
+  },
+  methods: {
+    index: function() {
+      axios.get("/students").then(
+        function(response) {
+          this.students = response.data;
+          console.log(this.students);
+        }.bind(this)
+      );
+    }
+  },
   computed: {}
 };
 
 var router = new VueRouter({
-  routes: [{ path: "/", component: HomePage }],
+  routes: [{ path: "/", component: StudentIndexPage }],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
   }

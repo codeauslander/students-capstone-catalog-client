@@ -16,8 +16,17 @@ class StudentsController < ApplicationController
                                         {name:"second capstone",screenshot:"http://www.capstonebranding.com/img/about/about_capstone.jpg"
                                         }
                                       ]
-      }
-    ]
+      },
+      {
+        id:3,first_name:"Lara",last_name:":D",email: "lara@gmail.com", phone_number: "1234", short_bio:"Awesome", linkedin_url:"my linkding_url", twitter_handle: "my twitter_handle", website_url: "my website_url", online_resume: "my online resume", github: "my github", photo: "my photo",capstones: [
+                        {name:"first capstone",screenshot:"http://www.capstonebranding.com/img/about/about_capstone.jpg"
+                        },
+                        {name:"second capstone",screenshot:"http://www.capstonebranding.com/img/about/about_capstone.jpg"
+                        }
+                      ]
+        }
+      ]
+
  
 
     @students = ss 
@@ -39,6 +48,6 @@ class StudentsController < ApplicationController
     @student = s
     # @student = Student.find(params[:id])
 
-    render json: 'show.json.jbuilder'
+    render 'show.json.jbuilder'
   end
 end

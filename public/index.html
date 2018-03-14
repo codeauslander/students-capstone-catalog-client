@@ -59,11 +59,26 @@
                 <li>{{capstone.name}}</li>
                 <img class="card-img" v-bind:src="capstone.screenshot" alt="capstone img">
               </ul>
-              <a href="#" class="btn btn-primary">Show me</a>
+              <a v-bind:href="'/#/students/' + 3" class="btn btn-primary">Show me</a>
             </div>
           </div>
         </div>
     </div>
 
+  </div>
+</template>
+
+<template id="students-show-page">
+  <div class="vue-component">
+    <div class="container">
+      <h1>{{ student.first_name }}</h1>
+      <!--   <ul v-for="capstone in student.capstones">
+
+          <h4>Capstone Name: {{ capstone.name }}</h4>
+          <h3>Description: {{ capstone.description }}</h3>
+          <img v-bind:src="student.capstone.screenshot" alt="">
+
+        </ul> -->
+    </div>
   </div>
 </template>

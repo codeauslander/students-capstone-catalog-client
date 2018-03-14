@@ -29,8 +29,33 @@ var StudentIndexPage = {
   computed: {}
 };
 
+var StudentShowPage = {
+  template: "#students-show-page",
+  data: function() {
+    return {
+      student: [
+        {
+          capstones: []
+        }
+      ]
+    };
+  },
+  created: function() {
+    axios.get("/students/" + 3).then(function(response) {
+      console.log(response.data)
+        this.student = response.data;
+      }.bind(this));
+  },
+  methods: {},
+  computed: {}
+};
+
 var router = new VueRouter({
-  routes: [{ path: "/", component: StudentIndexPage }],
+  routes: [
+          { path: "/", component: StudentIndexPage },
+          { path: "/students/3", component: StudentShowPage }
+
+          ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
   }

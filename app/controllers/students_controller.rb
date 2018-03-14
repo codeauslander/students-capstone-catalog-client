@@ -37,8 +37,8 @@ class StudentsController < ApplicationController
                                       ]
     }
     @student = s
-    @student = Student.find(params[:id])
+    # @student = Student.find(params[:id])
 
-    # render json: @student.as_json
+    render json: 'show.json.jbuilder'
   end
 end
